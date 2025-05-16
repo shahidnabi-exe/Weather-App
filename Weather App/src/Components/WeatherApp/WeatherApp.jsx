@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './WeatherApp.css'
 import searchIcon from '../Assets/search.png'
 import clearIcon from '../Assets/clear.png'
@@ -14,7 +14,7 @@ import humidityIcon from '../Assets/humidity.png'
   const WeatherApp =  () => {
   let APIkey =   "a2f00fdfa3b2821e0eef761440d98bca";
 
-  const[wicon, setWicon] = UseState(cloudIcon);
+  const[wicon, setWicon] = useState(cloudIcon);
   
   const search =  async () => {
     const element = document.getElementsByClassName("cityInput");
@@ -53,10 +53,10 @@ import humidityIcon from '../Assets/humidity.png'
     else  if(data.weather[0].icon === "01d" || data.weather[0].icon === "01n"){
       setWicon(clearIcon);
     }
-    else  if(data.weather[0].icon === "010d" || data.weather[0].icon === "010n"){
+    else  if(data.weather[0].icon === "10d" || data.weather[0].icon === "10n"){ 
       setWicon(clearIcon);
     }
-    else  if(data.weather[0].icon === "013d" || data.weather[0].icon === "013n"){
+    else  if(data.weather[0].icon === "13d" || data.weather[0].icon === "13n"){
       setWicon(snowIcon);
     }
     else setWicon(clearIcon);
