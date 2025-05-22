@@ -28,6 +28,11 @@ import humidityIcon from '../Assets/humidity.png'
     let response = await fetch(url);
     let data = await response.json(); 
 
+    if (data.cod !== 200) {
+      alert("City not found!");
+      return; 
+    }
+
     const humidity = document.getElementsByClassName("humidity-percent");
     const wind = document.getElementsByClassName("Wind-rate");
     const temprature = document.getElementsByClassName("weather-temp");
@@ -60,7 +65,6 @@ import humidityIcon from '../Assets/humidity.png'
       setWicon(snowIcon);
     }
     else setWicon(clearIcon);
-
 
   }
 
